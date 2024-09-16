@@ -8,6 +8,7 @@ import com.example.productcatlog.Models.Product;
 import com.example.productcatlog.Services.IproductService;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -67,7 +68,9 @@ public class ProductController {
         product.setImageUrl(productDto.getImageUrl());
         if(productDto.getCategory()!=null){
             Category category=new Category();
+            category.setId(productDto.getCategory().getId());
             category.setName(productDto.getCategory().getName());
+            category.setDescription(productDto.getCategory().getDescription());
             product.setCategory(category);
         }
         return product;}
@@ -83,6 +86,7 @@ public class ProductController {
         CategoryDto category=new CategoryDto();
         category.setId(product.getCategory().getId());
         category.setName(product.getCategory().getName());
+        category.setDescription(product.getCategory().getDescription());
         productDto.setCategory(category);
         }
         return productDto;

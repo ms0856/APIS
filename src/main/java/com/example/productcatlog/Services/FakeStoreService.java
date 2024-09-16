@@ -5,6 +5,7 @@ import com.example.productcatlog.Dtos.ProductDto;
 import com.example.productcatlog.Models.Category;
 import com.example.productcatlog.Models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
